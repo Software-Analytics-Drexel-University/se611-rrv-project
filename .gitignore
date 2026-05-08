@@ -1,0 +1,10 @@
+# Generated outputs from running the notebook
+*.png
+*.parquet
+
+# Jupyter checkpoints
+.ipynb_checkpoints/
+
+# Python cache
+__pycache__/
+*.pyc
