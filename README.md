@@ -81,4 +81,4 @@ This study is complementary to "Understanding Dominant Themes in Reviewing Agent
 
 ## Acknowledgments
 
-Per course policy, AI assistance was used during this project for code scaffolding, debugging, and support with analysis and visualization. All research questions, analytical decisions, interpretations, and conclusions are the author's own.
+Per course policy, AI assistance was used during this project for the initial code setup, debugging, and support with analysis and visualization. All research questions, analytical decisions, interpretations, and conclusions are the author's own.
