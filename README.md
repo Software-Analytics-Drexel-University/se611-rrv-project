@@ -34,7 +34,7 @@ Generated charts and the cached dataset are intentionally not committed; the not
 
 ## How to run
 
-The notebook loads the dataset over the network from Hugging Face, so an internet connection is required.
+The notebook loads the dataset from Hugging Face over the network, so an internet connection is required.
 
 1. Clone the repository:
    ```bash
