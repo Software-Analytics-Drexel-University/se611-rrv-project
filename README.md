@@ -8,11 +8,11 @@ An empirical study of how developers evaluate AI agent-authored pull requests (P
 ## Research questions
 
 - **RQ1 — Evaluation prevalence.** To what extent do agent-authored PRs receive formal evaluation, and how does this vary across the five agents?
-- **RQ2 — Reviewer behavior.** Among PRs that _do_ receive evaluation, what behaviors do reviewers exhibit (verdict mix, comment volume, and time-to-decision)?
+- **RQ2 — Reviewer behavior.** Among PRs that *do* receive evaluation, what behaviors do reviewers exhibit (verdict mix, comment volume, and time-to-decision)?
 
 ## Dataset
 
-The study uses **AIDev-pop**, a popular-repository subset of the AIDev dataset (Li et al., MSR 2026), loaded directly from Hugging Face (`hf://datasets/hao-li/AIDev`).
+The study uses **AIDev-pop**, a popular-repository subset of the AIDev dataset (Li, Zhang, and Hassan, arXiv:2602.09185, 2026), loaded directly from Hugging Face (`hf://datasets/hao-li/AIDev`).
 
 - ~33,596 pull requests
 - 5 AI coding agents: Codex, Devin, Copilot, Cursor, Claude Code
@@ -24,11 +24,11 @@ Four tables are joined for the analysis: `pull_request`, `pr_reviews`, `pr_comme
 
 ## Repository contents
 
-| File                  | Description                                                                        |
-| --------------------- | ---------------------------------------------------------------------------------- |
+| File | Description |
+|------|-------------|
 | `aidev_project.ipynb` | The full analysis: data loading, enrichment, and both RQ tracks, with all figures. |
-| `.gitignore`          | Excludes generated artifacts (chart PNGs, downloaded `.parquet` data).             |
-| `README.md`           | This file.                                                                         |
+| `.gitignore` | Excludes generated artifacts (chart PNGs, downloaded `.parquet` data). |
+| `README.md` | This file. |
 
 Generated charts and the cached dataset are intentionally not committed; the notebook regenerates them on each run.
 
@@ -57,7 +57,7 @@ The notebook loads the dataset over the network from Hugging Face, so an interne
 
 - **53.8%** of all PRs are merged with zero formal review — a "fast lane" into the main branch.
 - The rate varies sharply by agent: **74.2%** of Codex PRs take the fast lane versus **6.9%** of Copilot PRs, indicating two distinct collaboration regimes.
-- Stress-testing the claim with a stricter definition of engagement (no formal review _and_ no thread comment _and_ no inline comment): **84.2%** of fast-lane PRs are _truly silent_ — no human engagement of any kind before merge.
+- Stress-testing the claim with a stricter definition of engagement (no formal review *and* no thread comment *and* no inline comment): **84.2%** of fast-lane PRs are *truly silent* — no human engagement of any kind before merge.
 - "No engagement" means different things per agent. Share of an agent's PRs merged with no engagement at all: Codex **67.9%** (merged anyway — a rubber-stamp regime), Copilot **2.9%** (disengaged PRs are mostly abandoned, so review acts as a gate), Devin **0.1%** (PRs almost always draw at least informal comments).
 
 ### RQ2 — When review happens, it is substantive but rarely a gate
@@ -65,7 +65,7 @@ The notebook loads the dataset over the network from Hugging Face, so an interne
 - **24.2%** of PRs (8,140) received at least one formal review — the RQ2 subset.
 - Reviewed PRs are iterative, not rubber-stamped: median 2 reviews / 2 thread comments / 1 inline comment, with long tails (90th percentile of 8+ reviews and 9+ inline comments; one PR reached 159 inline comments).
 - Verdict mix is dominated by `COMMENTED` (62–81% of reviews per agent), while `CHANGES_REQUESTED` is rare everywhere (2–7%) — explicit rejection is unusual. Devin draws the most formal approvals (31%); Claude Code is almost pure discussion (81% commented, 16% approved).
-- Review correlates with deliberation time, not rejection: median time-to-merge is ~0 hours for fast-lane PRs versus 6.2 hours for reviewed PRs — roughly a 100× gap.
+- Review correlates with deliberation time, not rejection: median time-to-merge is about 0.01 hours (~50 seconds) for fast-lane PRs versus 6.2 hours for reviewed PRs — roughly a 450× gap.
 
 ## Limitations
 
@@ -77,7 +77,7 @@ The notebook loads the dataset over the network from Hugging Face, so an interne
 
 ## Related work
 
-This study is complementary to "Understanding Dominant Themes in Reviewing Agentic AI-authored Code" (arXiv:2601.19287), which examines the _themes_ of review content on the same dataset. This work instead quantifies evaluation _prevalence_ and reviewer _behavior_; the two do not overlap.
+This study is complementary to "Understanding Dominant Themes in Reviewing Agentic AI-authored Code" (arXiv:2601.19287), which examines the *themes* of review content on the same dataset. This work instead quantifies evaluation *prevalence* and reviewer *behavior*; the two do not overlap.
 
 ## Acknowledgments
 
